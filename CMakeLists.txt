@@ -181,31 +181,31 @@ if(RAPIDJSON_BUILD_TESTS)
 endif()
 
 # pkg-config
-IF (UNIX OR CYGWIN)
-  CONFIGURE_FILE (${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.pc.in
-                  ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc
-                  @ONLY)
-  INSTALL (FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc
-      DESTINATION "${LIB_INSTALL_DIR}/pkgconfig"
-      COMPONENT pkgconfig)
-ENDIF()
+#IF (UNIX OR CYGWIN)
+#  CONFIGURE_FILE (${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.pc.in
+#                  ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc
+#                  @ONLY)
+#  INSTALL (FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc
+#      DESTINATION "${LIB_INSTALL_DIR}/pkgconfig"
+#      COMPONENT pkgconfig)
+#ENDIF()
 
-install(FILES readme.md
-        DESTINATION "${DOC_INSTALL_DIR}"
-        COMPONENT doc)
-
-install(DIRECTORY include/rapidjson
-    DESTINATION "${INCLUDE_INSTALL_DIR}"
-    COMPONENT dev)
-
-install(DIRECTORY example/
-    DESTINATION "${DOC_INSTALL_DIR}/examples"
-    COMPONENT examples
-    # Following patterns are for excluding the intermediate/object files
-    # from an install of in-source CMake build.
-    PATTERN "CMakeFiles" EXCLUDE
-    PATTERN "Makefile" EXCLUDE
-    PATTERN "cmake_install.cmake" EXCLUDE)
+#install(FILES readme.md
+#        DESTINATION "${DOC_INSTALL_DIR}"
+#        COMPONENT doc)
+#
+#install(DIRECTORY include/rapidjson
+#    DESTINATION "${INCLUDE_INSTALL_DIR}"
+#    COMPONENT dev)
+#
+#install(DIRECTORY example/
+#    DESTINATION "${DOC_INSTALL_DIR}/examples"
+#    COMPONENT examples
+#    # Following patterns are for excluding the intermediate/object files
+#    # from an install of in-source CMake build.
+#    PATTERN "CMakeFiles" EXCLUDE
+#    PATTERN "Makefile" EXCLUDE
+#    PATTERN "cmake_install.cmake" EXCLUDE)
 
 # Provide config and version files to be used by other applications
 # ===============================
@@ -237,14 +237,14 @@ SET( CONFIG_DIR )
 CONFIGURE_FILE( ${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}Config.cmake.in
     ${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/${PROJECT_NAME}Config.cmake @ONLY )
 
-INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/${PROJECT_NAME}Config.cmake"
-        DESTINATION ${CMAKECONFIG_INSTALL_DIR} )
-
-# Install files
-IF(CMAKE_INSTALL_DIR)
-  INSTALL(FILES
-      ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
-      ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
-      DESTINATION "${CMAKE_INSTALL_DIR}"
-      COMPONENT dev)
-ENDIF()
+#INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/${PROJECT_NAME}Config.cmake"
+#        DESTINATION ${CMAKECONFIG_INSTALL_DIR} )
+#
+## Install files
+#IF(CMAKE_INSTALL_DIR)
+#  INSTALL(FILES
+#      ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
+#      ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
+#      DESTINATION "${CMAKE_INSTALL_DIR}"
+#      COMPONENT dev)
+#ENDIF()
