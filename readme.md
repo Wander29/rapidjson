@@ -1,3 +1,9 @@
+This is a fork of the repository https://github.com/Tencent/rapidjson.
+
+You can sync it with its source and use **cmake-update-ludo** as working branch, where we can merge the updates through pull requests.
+
+---
+
 ![RapidJSON logo](doc/logo/rapidjson.png)
 
 ![Release version](https://img.shields.io/badge/release-v1.1.0-blue.svg)
