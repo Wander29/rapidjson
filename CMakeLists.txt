@@ -29,14 +29,14 @@ endif()
 # Build all binaries in a separate directory
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-option(RAPIDJSON_BUILD_DOC "Build rapidjson documentation." ON)
-option(RAPIDJSON_BUILD_EXAMPLES "Build rapidjson examples." ON)
-option(RAPIDJSON_BUILD_TESTS "Build rapidjson perftests and unittests." ON)
+option(RAPIDJSON_BUILD_DOC "Build rapidjson documentation." OFF)
+option(RAPIDJSON_BUILD_EXAMPLES "Build rapidjson examples." OFF)
+option(RAPIDJSON_BUILD_TESTS "Build rapidjson perftests and unittests." OFF)
 option(RAPIDJSON_BUILD_THIRDPARTY_GTEST
     "Use gtest installation in `thirdparty/gtest` by default if available" OFF)
 
-option(RAPIDJSON_BUILD_CXX11 "Build rapidjson with C++11" ON)
-option(RAPIDJSON_BUILD_CXX17 "Build rapidjson with C++17" OFF)
+option(RAPIDJSON_BUILD_CXX11 "Build rapidjson with C++11" OFF)
+option(RAPIDJSON_BUILD_CXX17 "Build rapidjson with C++17" ON)
 if(RAPIDJSON_BUILD_CXX11)
     set(CMAKE_CXX_STANDARD 11)
     set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
